@@ -2,3 +2,4 @@ __pycache__/
 .venv/
 logs/
 target/
+logs/dbt.log
