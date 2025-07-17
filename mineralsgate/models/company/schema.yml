@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: company
+    description: "جدول بيانات الشركات"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: name_ar
+        description: "الاسم العربي"
+
+
