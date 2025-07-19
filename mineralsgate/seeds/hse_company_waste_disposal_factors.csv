@@ -1,0 +1,16 @@
+id,name
+1,الصلبة/ نفايات الخام-طن Tailing Waste - Ton
+2,الصلبة/ إسكراب - كيلوجرام Scrap - Kg
+3,الصلبة/ أخرى كيلوجرام  - Other Kg
+4,العبوات الفارغة/ عبوات السيانيد الفارغة (براميل – شكارات) Empty  Cyanide container (bags – barrel)
+5,العبوات الفارغة/ عبوات المواد الكيميائية الفارغة Empty Chemical container
+6,العبوات الفارغة/ عبوات الأحماض الفارغة Empty Acids container
+7,العبوات الفارغة/ أخرى - Other
+8,السائلة/ سوائل المعمل  - متر مكعب Lab liquid – cubic meter
+9,السائلة/ مياه الصرف الصحي - متر مكعب Sewage - cubic meter
+10,السائلة/ أخرى متر مكعب - Other - cubic meter
+11,نفايات المطبخ Kitchen waste
+12,كمية الزئبق المجمع في غرفة الصهر (مكثف الزئبق) Quantity of Mercury Condensed in smelting Room (Mercury Condenser)
+13,كمية الزئبق المجمع في الخلية (مكثف الزئبق) Quantity of Mercury Condensed in Electro winning (Mercury Condenser)
+14,نسبة السيانيد في حوض النفاية Percentage of Cyanide in tailing dam
+15,نسبة الزئبق في حوض النفاية Percentage of Mercury in tailing dam
