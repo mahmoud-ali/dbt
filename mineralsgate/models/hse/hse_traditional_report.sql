@@ -1,5 +1,5 @@
 SELECT
-  "public"."hse_traditional_hsetraditionalreport"."id" AS "id",
+  "public"."hse_traditional_hsetraditionalreport"."id" AS "report_id",
   "public"."hse_traditional_hsetraditionalreport"."year" AS "year",
   "public"."hse_traditional_hsetraditionalreport"."month" AS "month",
   "hse_traditional_report_state"."name" AS "state",

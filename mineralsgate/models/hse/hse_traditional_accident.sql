@@ -1,5 +1,5 @@
 SELECT
-  "public"."hse_traditional_hsetraditionalaccident"."id" AS "id",
+  "public"."hse_traditional_hsetraditionalaccident"."id" AS "accident_id",
   "hse_traditional_accident_type"."name" AS "type",
   "hse_traditional_report_state"."name" AS "state",
   "public"."hse_traditional_hsetraditionalaccident"."what" AS "what",
