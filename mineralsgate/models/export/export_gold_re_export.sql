@@ -1,7 +1,7 @@
 SELECT
   "public"."gold_travel_appmovegold"."id" AS "id",
   "public"."gold_travel_appmovegold"."date" AS "date",
-  "company_profile_lkpstate__via__source_state_id"."name" AS "company_name",
+  "company_profile_lkpstate__via__source_state_id"."name" AS "source_state",
   "gold_travel_lkpowner__via__owner_name_lst_id"."name" AS "owner_name",
   "gold_export_state"."name" AS "state",
   "public"."gold_travel_appmovegold"."code" AS "code",
