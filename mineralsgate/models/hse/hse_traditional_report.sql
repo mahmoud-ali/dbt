@@ -2,6 +2,7 @@ SELECT
   "public"."hse_traditional_hsetraditionalreport"."id" AS "report_id",
   "public"."hse_traditional_hsetraditionalreport"."year" AS "year",
   "public"."hse_traditional_hsetraditionalreport"."month" AS "month",
+  make_date("public"."hse_traditional_hsetraditionalreport"."year", "public"."hse_traditional_hsetraditionalreport"."month", 1) AS "report_date",
   "hse_traditional_report_state"."name" AS "state",
   "lkpstate"."name" AS "source_state"
 FROM
