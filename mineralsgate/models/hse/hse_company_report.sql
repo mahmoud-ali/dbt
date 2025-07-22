@@ -2,6 +2,7 @@ SELECT
   "public"."hse_companies_apphseperformancereport"."id" AS "report_id",
   "public"."hse_companies_apphseperformancereport"."year" AS "year",
   "public"."hse_companies_apphseperformancereport"."month" AS "month",
+  make_date("public"."hse_companies_apphseperformancereport"."year", "public"."hse_companies_apphseperformancereport"."month", 1) AS "report_date",
   "public"."hse_companies_apphseperformancereport"."note" AS "note",
   "hse_state"."name" AS "state",
   "company - company_id"."id" AS "company_id",
