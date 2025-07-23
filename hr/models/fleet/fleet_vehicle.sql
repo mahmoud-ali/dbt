@@ -7,7 +7,8 @@ SELECT
   "Fleet Vehiclefueltype - Fuel Type"."name" AS "vehicle_fuel_type",
   "Fleet Vehiclemodel - Model"."name" AS "vehicle_model_name",
   "Fleet Vehiclemake - Make"."name" AS "vehicle_make_name",
-  "Fleet Vehiclestatus - Status"."name" AS "vehicle_status_name"
+  "Fleet Vehiclestatus - Status"."name" AS "vehicle_status_name",
+  "public"."fleet_vehicle"."book_value" AS "book_value"
 FROM
   "public"."fleet_vehicle"
  
