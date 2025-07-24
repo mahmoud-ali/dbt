@@ -13,6 +13,7 @@ SELECT
   "public"."hr_employeebasic"."phone" AS "phone",
   "public"."hr_employeebasic"."email" AS "email",
   "public"."hr_employeebasic"."tarikh_milad" AS "tarikh_milad",
+  EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM "public"."hr_employeebasic"."tarikh_milad") as "age",
   "public"."hr_employeebasic"."tarikh_akhir_targia" AS "tarikh_akhir_targia",
   "hr_employee_status"."name" AS "status",
   "hr_mosamawazifi - mosama_wazifi_id"."name" AS "mosamawazifi",
