@@ -6,7 +6,7 @@ SELECT
   "hr_alawa_sanawia"."name" AS "alawa_sanawia",
   "public"."hr_employeebasic"."tarikh_ta3in" AS "tarikh_ta3in",
   "public"."hr_employeebasic"."atfal" AS "atfal",
-  "public"."hr_employeebasic"."gasima" AS "gasima",
+  "mariage_state"."name" AS "gasima",
   "hr_moahil"."name" AS "moahil",
   "hr_sex"."name" AS "sex",
   "no3_2lertibat"."name" AS "no3_2lertibat",
@@ -30,3 +30,4 @@ LEFT JOIN {{ ref('hr_sex')}} as "hr_sex" ON "hr_sex"."id" = "public"."hr_employe
 LEFT JOIN {{ ref('no3_2lertibat')}} as "no3_2lertibat" ON "no3_2lertibat"."id" = "public"."hr_employeebasic"."no3_2lertibat"
 LEFT JOIN {{ ref('hr_employee_status')}} as "hr_employee_status" ON "hr_employee_status"."id" = "public"."hr_employeebasic"."status"
 LEFT JOIN {{ ref('hr_moahil')}} as "hr_moahil" ON "hr_moahil"."id" = "public"."hr_employeebasic"."moahil"
+LEFT JOIN {{ ref('mariage_state')}} as "mariage_state" ON "mariage_state"."id" = "public"."hr_employeebasic"."gasima"
