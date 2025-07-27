@@ -1,4 +1,5 @@
 SELECT
+  "public"."sswg_basicformexport"."created_at",
   "public"."sswg_basicformexport"."id" AS "export_id",
   "public"."sswg_basicformexport"."date" AS "date",
   "public"."sswg_basicformexport"."sn_no" AS "sn_no",
