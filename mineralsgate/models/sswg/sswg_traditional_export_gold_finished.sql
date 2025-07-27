@@ -1,4 +1,5 @@
 SELECT
+  "public"."sswg_customforceairportdata"."comment" AS "customforce_comment", 
   "sswg_basicformexport"."export_id" AS "export_id",
   "sswg_basicformexport"."date" AS "export_date",
   "sswg_basicformexport"."sn_no" AS "export_sn_no",
