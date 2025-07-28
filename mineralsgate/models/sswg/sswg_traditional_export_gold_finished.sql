@@ -5,6 +5,7 @@ SELECT
   "sswg_basicformexport"."sn_no" AS "export_sn_no",
   "sswg_basicformexport"."state" AS "export_state",
   "sswg_basicformexport"."next_state" AS "export_next_state",
+  "sswg_basicformexport"."company_name" AS "company_name",
   "sswg_basicformexport"."link" AS "link",
   "sswg_basicformexport"."created_at" AS "started_at",
   "public"."sswg_customforceairportdata"."created_at" AS "ended_at",
