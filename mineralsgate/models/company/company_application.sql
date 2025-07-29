@@ -10,7 +10,9 @@ SELECT
   "source"."name_ar" AS "name_ar",
   "source"."name_en" AS "name_en",
   "company_type"."name" AS "company_type",
-  "company_type"."id" AS "company_type_id"
+  "company_type"."id" AS "company_type_id",
+  FLOOR(EXTRACT(EPOCH FROM ("source"."updated_at" - "source"."created_at"))/3600)+1 as "kpi_hours"
+
 FROM
   (
     (
