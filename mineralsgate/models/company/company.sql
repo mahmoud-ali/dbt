@@ -10,6 +10,7 @@ SELECT
   "public"."company_profile_tblcompanyproduction"."rep_phone" AS "rep_phone",
   "public"."company_profile_tblcompanyproduction"."email" AS "email",
   "company_type"."name" AS "company_type",
+  "company_type"."id" AS "company_type_id",
   "public"."company_profile_tblcompanyproduction"."code" AS "code",
   "company_profile_lkpcompanyproductionstatus - status_id"."name" AS "company_status"
 FROM

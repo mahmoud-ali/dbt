@@ -9,7 +9,8 @@ SELECT
   "source"."code" AS "code",
   "source"."name_ar" AS "name_ar",
   "source"."name_en" AS "name_en",
-  "company_type"."name" AS "company_type"
+  "company_type"."name" AS "company_type",
+  "company_type"."id" AS "company_type_id"
 FROM
   (
     (

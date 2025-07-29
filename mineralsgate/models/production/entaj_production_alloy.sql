@@ -11,6 +11,7 @@ SELECT
   "Company Profile Tblcompanyproduction - Company"."name_ar" AS "company_name_ar",
   "Company Profile Tblcompanyproduction - Company"."name_en" AS "company_name_en",
   "company_type"."name" AS "company_company_type",
+  "company_type"."id" as "company_type_id",
   "Company Profile Tblcompanyproductionlicense - License"."start_date" AS "license_start_date",
   "Company Profile Tblcompanyproductionlicense - License"."end_date" AS "license_end_date",
   "Company Profile Tblcompanyproductionlicense - License"."sheet_no" AS "license_sheet_no",
