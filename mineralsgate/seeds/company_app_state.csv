@@ -1,5 +1,5 @@
 id,name
 submitted,طلب جديد
-accepted,مكتمل
-approved,مصدق
-rejected,مرفوض
+accepted,تم كتابة توصية
+approved,تم إعتماد الطلب
+rejected,تم رفض الطلب
