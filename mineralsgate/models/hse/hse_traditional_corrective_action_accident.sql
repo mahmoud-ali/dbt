@@ -8,7 +8,8 @@ SELECT
   "hse_traditional_accident"."type" as "accident_type",
   "hse_traditional_accident"."what" as "accident_what",
   "hse_traditional_accident"."when" as "accident_when",
-  "hse_traditional_accident"."where" as "accident_where"
+  "hse_traditional_accident"."where" as "accident_where",
+  "lkpstate"."id" AS "source_state_id"
 FROM
   "public"."hse_traditional_hsetraditionalcorrectiveaction"
 INNER JOIN {{ ref('hse_traditional_accident')}} AS "hse_traditional_accident" ON "public"."hse_traditional_hsetraditionalcorrectiveaction"."source_accident_id" = "hse_traditional_accident"."accident_id"

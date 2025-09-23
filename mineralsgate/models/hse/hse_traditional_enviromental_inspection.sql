@@ -11,7 +11,8 @@ SELECT
   "report"."report_date" as "report_date",
   "report"."state" as "report_state",
   "report"."source_state" as "report_source_state",
-  CONCAT('https://mineralsgate.com/app/managers/hse_traditional/hsetraditionalreport/',"report"."report_id",'/change/') as "link"
+  CONCAT('https://mineralsgate.com/app/managers/hse_traditional/hsetraditionalreport/',"report"."report_id",'/change/') as "link",
+  "report"."source_state_id"
 FROM
   "public"."hse_traditional_environmentalinspection" AS "environmental_inspection"
 INNER JOIN

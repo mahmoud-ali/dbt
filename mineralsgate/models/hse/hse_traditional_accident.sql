@@ -5,7 +5,8 @@ SELECT
   "public"."hse_traditional_hsetraditionalaccident"."what" AS "what",
   "public"."hse_traditional_hsetraditionalaccident"."when" AS "when",
   "public"."hse_traditional_hsetraditionalaccident"."where" AS "where",
-  "lkpstate"."name" AS "source_state"
+  "lkpstate"."name" AS "source_state",
+  "lkpstate"."id" AS "source_state_id"
 FROM
   "public"."hse_traditional_hsetraditionalaccident"
 
