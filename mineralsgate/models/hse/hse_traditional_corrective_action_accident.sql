@@ -15,3 +15,5 @@ FROM
 INNER JOIN {{ ref('hse_traditional_accident')}} AS "hse_traditional_accident" ON "public"."hse_traditional_hsetraditionalcorrectiveaction"."source_accident_id" = "hse_traditional_accident"."accident_id"
 LEFT JOIN "public"."company_profile_lkpstate" AS "lkpstate" ON "public"."hse_traditional_hsetraditionalcorrectiveaction"."source_state_id" = "lkpstate"."id"
 LEFT JOIN {{ ref('hse_traditional_report_state')}} as "hse_traditional_report_state" ON "hse_traditional_report_state"."id" = "public"."hse_traditional_hsetraditionalcorrectiveaction"."state"
+
+WHERE "hse_traditional_report_state"."id" <> 1

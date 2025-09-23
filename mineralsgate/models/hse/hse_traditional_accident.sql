@@ -13,3 +13,5 @@ FROM
 LEFT JOIN "public"."company_profile_lkpstate" AS "lkpstate" ON "public"."hse_traditional_hsetraditionalaccident"."source_state_id" = "lkpstate"."id"
 LEFT JOIN {{ ref('hse_traditional_report_state')}} as "hse_traditional_report_state" ON "hse_traditional_report_state"."id" = "public"."hse_traditional_hsetraditionalaccident"."state"
 LEFT JOIN {{ ref('hse_traditional_accident_type')}} as "hse_traditional_accident_type" ON "hse_traditional_accident_type"."id" = "public"."hse_traditional_hsetraditionalaccident"."type"
+
+WHERE "hse_traditional_report_state"."id" <> 1
