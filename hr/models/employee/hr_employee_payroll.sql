@@ -2,7 +2,8 @@ SELECT
   "emp".*,
   make_date("master"."year", "master"."month", 27) AS "date",
   "payroll"."total_salary",
-  "payroll"."net_salary"
+  "payroll"."net_salary",
+  "payroll"."mokaf2"
 
 FROM
   "public"."hr_payrollsummary" as "payroll"
