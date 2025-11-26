@@ -8,8 +8,6 @@ SELECT
   "public"."khatabat_harkatkhatabat"."forward_date" AS "haraka_forward_date",
   "public"."khatabat_harkatkhatabat"."delivery_date" AS "haraka_delivery_date",
   "maktab_tanfizi_followup"."name" AS "haraka_followup_result",
-  "public"."khatabat_harkatkhatabat"."followup_attachment" AS "haraka_followup_attachment",
-  "public"."khatabat_harkatkhatabat"."letter_attachment" AS "haraka_letter_attachment",
   "maktab_tanfizi_procedure"."name" AS "procedure_name",
   "public"."khatabat_harkatkhatabat"."date" AS "haraka_date",
   "public"."khatabat_harkatkhatabat"."note" AS "haraka_note",
