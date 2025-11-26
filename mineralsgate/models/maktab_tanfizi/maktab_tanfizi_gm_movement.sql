@@ -15,7 +15,8 @@ SELECT
   "public"."khatabat_harkatkhatabat"."note" AS "haraka_note",
   "public"."khatabat_maktabtanfizi"."name" AS "maktab_tanfizi_name",
   "khatabat_maktabtanfizijiha_source"."name" AS "haraka_source_jiha",
-  "khatabat_maktabtanfizijiha_forwarded_to"."name" AS "haraka_forwarded_to_jiha"
+  "khatabat_maktabtanfizijiha_forwarded_to"."name" AS "haraka_forwarded_to_jiha",
+  CONCAT('https://mineralsgate.com/app/managers/khatabat/khatabat/',"public"."khatabat_khatabat"."letter_number",'/change/') as "link"
 FROM
   "public"."khatabat_khatabat"
 INNER JOIN "public"."khatabat_harkatkhatabat" ON "public"."khatabat_khatabat"."letter_number" = "public"."khatabat_harkatkhatabat"."letter_id"
