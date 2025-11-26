@@ -23,5 +23,5 @@ LEFT JOIN "public"."khatabat_maktabtanfizijiha" AS "khatabat_maktabtanfizijiha_s
 LEFT JOIN "public"."khatabat_maktabtanfizijiha" AS "khatabat_maktabtanfizijiha_forwarded_to" ON "public"."khatabat_harkatkhatabat"."forwarded_to_id" = "khatabat_maktabtanfizijiha_forwarded_to"."id"
 LEFT JOIN {{ref('maktab_tanfizi_procedure')}} AS "maktab_tanfizi_procedure" ON "public"."khatabat_harkatkhatabat"."procedure" = "maktab_tanfizi_procedure"."id"
 LEFT JOIN {{ref('maktab_tanfizi_movement_type')}} AS "maktab_tanfizi_movement_type" ON "public"."khatabat_harkatkhatabat"."movement_type" = "maktab_tanfizi_movement_type"."id"
-LEFT JOIN {{ref('maktab_tanfizi_followup')}} AS "maktab_tanfizi_followup" ON "public"."khatabat_harkatkhatabat"."movement_type" = "maktab_tanfizi_followup"."id"
+LEFT JOIN {{ref('maktab_tanfizi_followup')}} AS "maktab_tanfizi_followup" ON "public"."khatabat_harkatkhatabat"."followup_result" = "maktab_tanfizi_followup"."id"
 WHERE "public"."khatabat_maktabtanfizi"."code" = 'gm'
