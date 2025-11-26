@@ -1,0 +1,34 @@
+SELECT
+hr_employee.*,
+hr_employee_manager.name AS manger,
+hr_survey_emergency_evaluation.job_title AS mosamawazifi,
+hr_survey_emergency_evaluation.period_from AS survey_from,
+hr_survey_emergency_evaluation.period_to AS  survey_to,
+hr_survey_emergency_evaluation.attendance_discipline,
+hr_survey_emergency_evaluation.follow_instructions,
+hr_survey_emergency_evaluation.task_responsibility,
+hr_survey_emergency_evaluation.teamwork,
+hr_survey_emergency_evaluation.communication,
+hr_survey_emergency_evaluation.main_tasks_quality,
+hr_survey_emergency_evaluation.extra_tasks,
+hr_survey_emergency_evaluation.work_pressure,
+hr_survey_emergency_evaluation.policies_commitment,
+hr_survey_emergency_evaluation.creativity,
+hr_survey_emergency_evaluation.overall_performance,
+hr_survey_emergency_evaluation.emergency_response,
+hr_survey_emergency_evaluation.coverage_percentage,
+hr_survey_emergency_evaluation.strengths,
+hr_survey_emergency_evaluation.challenges,
+hr_survey_emergency_evaluation.training_needs,
+hr_survey_emergency_evaluation.manager_notes,
+hr_survey_emergency_evaluation.average_attendance,
+hr_survey_emergency_evaluation.attendance_punctnality,
+hr_survey_emergency_evaluation.violation_count,
+hr_survey_emergency_evaluation.warnings_count,
+hr_survey_emergency_evaluation.employee_effective,
+hr_survey_emergency_evaluation.recommendations_continue,
+hr_survey_emergency_evaluation.Substantive_note
+FROM
+  "public"."hr_employee_survey_emergencyevaluation" AS "hr_survey_emergency_evaluation"
+LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee" ON "public"."hr_employee"."email" = "hr_survey_emergency_evaluation"."email"
+LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee_manager" ON "public"."hr_employee_manager"."email" = "hr_survey_emergency_evaluation"."direct_manager
