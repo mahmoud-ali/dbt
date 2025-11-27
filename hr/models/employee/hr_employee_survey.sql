@@ -1,7 +1,7 @@
 SELECT
 hr_employee.*,
 hr_employee_manager.name AS manger,
-hr_survey_emergency_evaluation.job_title AS mosamawazifi,
+hr_survey_emergency_evaluation.job_title AS job_title,
 hr_survey_emergency_evaluation.period_from AS survey_from,
 hr_survey_emergency_evaluation.period_to AS  survey_to,
 hr_survey_emergency_evaluation.attendance_discipline,
@@ -27,8 +27,8 @@ hr_survey_emergency_evaluation.violation_count,
 hr_survey_emergency_evaluation.warnings_count,
 hr_survey_emergency_evaluation.employee_effective,
 hr_survey_emergency_evaluation.recommendations_continue,
-hr_survey_emergency_evaluation.Substantive_note
+hr_survey_emergency_evaluation.substantive_note
 FROM
   "public"."hr_employee_survey_emergencyevaluation" AS "hr_survey_emergency_evaluation"
-LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee" ON "public"."hr_employee"."email" = "hr_survey_emergency_evaluation"."email"
-LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee_manager" ON "public"."hr_employee_manager"."email" = "hr_survey_emergency_evaluation"."direct_manager
+LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee" ON "hr_employee"."email" = "hr_survey_emergency_evaluation"."email"
+LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee_manager" ON "hr_employee_manager"."email" = "hr_survey_emergency_evaluation"."direct_manager"
