@@ -13,7 +13,7 @@ SELECT
   "public"."khatabat_maktabtanfizi"."name" AS "maktab_tanfizi_name",
   "khatabat_maktabtanfizijiha_source"."name" AS "haraka_source_jiha",
   CONCAT('https://mineralsgate.com/app/managers/khatabat/khatabat/',"public"."khatabat_khatabat"."letter_number",'/change/') as "link",
-  JSON_AGG("khatabat_maktabtanfizijiha_forwarded"."name") AS "forwarded_to_jihat"
+  ARRAY_TO_STRING(ARRAY_AGG("khatabat_maktabtanfizijiha_forwarded"."name"), '، ') AS "forwarded_to_jihat"
 FROM
   "public"."khatabat_khatabat"
 INNER JOIN "public"."khatabat_harkatkhatabat" ON "public"."khatabat_khatabat"."letter_number" = "public"."khatabat_harkatkhatabat"."letter_id"
