@@ -7,7 +7,6 @@ SELECT
   "maktab_tanfizi_movement_type"."name" AS "haraka_movement_type",
   "public"."khatabat_harkatkhatabat"."forward_date" AS "haraka_forward_date",
   "public"."khatabat_harkatkhatabat"."delivery_date" AS "haraka_delivery_date",
-  "maktab_tanfizi_followup"."name" AS "haraka_followup_result",
   "maktab_tanfizi_procedure"."name" AS "procedure_name",
   "public"."khatabat_harkatkhatabat"."date" AS "haraka_date",
   "public"."khatabat_harkatkhatabat"."note" AS "haraka_note",
@@ -21,5 +20,4 @@ LEFT JOIN "public"."khatabat_maktabtanfizi" ON "public"."khatabat_khatabat"."mak
 LEFT JOIN "public"."khatabat_maktabtanfizijiha" AS "khatabat_maktabtanfizijiha_source" ON "public"."khatabat_harkatkhatabat"."source_entity_id" = "khatabat_maktabtanfizijiha_source"."id"
 LEFT JOIN {{ref('maktab_tanfizi_procedure')}} AS "maktab_tanfizi_procedure" ON "public"."khatabat_harkatkhatabat"."procedure" = "maktab_tanfizi_procedure"."id"
 LEFT JOIN {{ref('maktab_tanfizi_movement_type')}} AS "maktab_tanfizi_movement_type" ON "public"."khatabat_harkatkhatabat"."movement_type" = "maktab_tanfizi_movement_type"."id"
-LEFT JOIN {{ref('maktab_tanfizi_followup')}} AS "maktab_tanfizi_followup" ON "public"."khatabat_harkatkhatabat"."followup_result" = "maktab_tanfizi_followup"."id"
 WHERE LOWER("public"."khatabat_maktabtanfizi"."code") = 'gm'
