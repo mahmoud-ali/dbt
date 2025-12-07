@@ -15,10 +15,14 @@ structure_survey.service_delivery,
 structure_survey.challenges,
 structure_survey.suitability,
 structure_survey.improvements,
-hr_mosamawazifi.name AS mosamawazifi
+structure_survey.overall_evaluation,
+structure_survey.average_score,
+hr_mosamawazifi.name AS mosamawazifi,
+hr_hikalwazifi.name AS hikalwazifi
 
 FROM public.hr_employee_survey_surveyresponse AS structure_survey
-LEFT JOIN public.hr_mosamawazifi AS hr_mosamawazifi ON structure_survey.position_id = hr_mosamawazifi.id
+LEFT JOIN  public.hr_mosamawazifi AS hr_mosamawazifi ON structure_survey.position_id = hr_mosamawazifi.id
+LEFT JOIN  public.hr_hikalwazifi AS hr_hikalwazifi ON structure_survey.department_id = hr_hikalwazifi.id
 
 
 

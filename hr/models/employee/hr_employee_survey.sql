@@ -14,7 +14,6 @@ hr_survey_emergency_evaluation.extra_tasks,
 hr_survey_emergency_evaluation.work_pressure,
 hr_survey_emergency_evaluation.policies_commitment,
 hr_survey_emergency_evaluation.creativity,
-hr_survey_emergency_evaluation.overall_performance,
 hr_survey_emergency_evaluation.emergency_response,
 hr_survey_emergency_evaluation.coverage_percentage,
 hr_survey_emergency_evaluation.strengths,
@@ -25,10 +24,14 @@ hr_survey_emergency_evaluation.average_attendance,
 hr_survey_emergency_evaluation.attendance_punctnality,
 hr_survey_emergency_evaluation.violation_count,
 hr_survey_emergency_evaluation.warnings_count,
-hr_survey_emergency_evaluation.employee_effective,
-hr_survey_emergency_evaluation.recommendations_continue,
-hr_survey_emergency_evaluation.substantive_note
+hr_status.name as employee_effective,
+hr_recommendations.name as recommendations_continue,
+hr_survey_emergency_evaluation.substantive_note,
+hr_survey_emergency_evaluation.overall_performance,
+hr_survey_emergency_evaluation.manager_average_score
 FROM
-  "public"."hr_employee_survey_emergencyevaluation" AS "hr_survey_emergency_evaluation"
-LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee" ON "hr_employee"."email" = "hr_survey_emergency_evaluation"."email"
-LEFT JOIN {{ ref('hr_employee')}} AS "hr_employee_manager" ON "hr_employee_manager"."email" = "hr_survey_emergency_evaluation"."direct_manager"
+  public.hr_employee_survey_emergencyevaluation AS hr_survey_emergency_evaluation
+LEFT JOIN {{ ref('hr_employee')}} ON hr_employee.email = hr_survey_emergency_evaluation.email
+LEFT JOIN {{ ref('hr_employee')}} AS hr_employee_manager ON hr_employee_manager.email = hr_survey_emergency_evaluation.direct_manager
+LEFT JOIN {{ ref('hr_employee_survey_status')}} as hr_status ON hr_status.id = hr_survey_emergency_evaluation.employee_effective
+LEFT JOIN {{ ref('hr_employee_survey_status')}} as hr_recommendations ON hr_recommendations.id = hr_survey_emergency_evaluation.recommendations_continue
