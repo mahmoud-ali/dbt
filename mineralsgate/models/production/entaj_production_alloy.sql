@@ -7,7 +7,7 @@ SELECT
   "Production Control Goldproductionform - Master"."date" AS "production_date",
   "production_state"."name" AS "production_form_state",
   "Production Control Goldshippingform - Master"."date" AS "shipping_date",
-  "Production Control Goldshippingform - Master"."state" AS "shipping_form_state",
+  "shipping_state"."name" AS "shipping_form_state",
   "Company Profile Tblcompanyproduction - Company"."name_ar" AS "company_name_ar",
   "Company Profile Tblcompanyproduction - Company"."name_en" AS "company_name_en",
   "company_type"."name" AS "company_company_type",
@@ -29,4 +29,5 @@ LEFT JOIN "public"."production_control_goldshippingformalloy" AS "Production Con
   LEFT JOIN "public"."company_profile_lkpstate" AS "Company Profile Lkpstate - State" ON "Company Profile Tblcompanyproductionlicense - License"."state_id" = "Company Profile Lkpstate - State"."id"
   LEFT JOIN "public"."company_profile_lkplocality" AS "Company Profile Lkplocality - Locality" ON "Company Profile Tblcompanyproductionlicense - License"."locality_id" = "Company Profile Lkplocality - Locality"."id"
   LEFT JOIN {{ ref('production_state') }} as "production_state" on "production_state"."id" = "Production Control Goldproductionform - Master"."state"
+  LEFT JOIN {{ ref('shipping_state') }} as "shipping_state" on "shipping_state"."id" = "Production Control Goldshippingform - Master"."state"
   LEFT JOIN {{ ref('company_type') }} as "company_type" on "company_type"."id" = "Company Profile Tblcompanyproduction - Company"."company_type"
