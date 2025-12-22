@@ -16,6 +16,8 @@ SELECT
   EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM "public"."hr_employeebasic"."tarikh_milad") as "age",
   "public"."hr_employeebasic"."tarikh_akhir_targia" AS "tarikh_akhir_targia",
   "hr_employee_status"."name" AS "status",
+  "emp_bank_account"."bank" AS "bank",
+  "emp_bank_account"."account_no" AS "account_no",
   "hr_mosamawazifi - mosama_wazifi_id"."name" AS "mosamawazifi",
   "hr_hikalwazifi - edara_3ama"."name" AS "edara_3ama",
   "hr_hikalwazifi - edara_far3ia_id"."name" AS "edara_far3ia"
@@ -25,6 +27,7 @@ LEFT JOIN "public"."hr_mosamawazifi" AS "hr_mosamawazifi - mosama_wazifi_id" ON 
 LEFT JOIN "public"."hr_hikalwazifi" AS "hr_hikalwazifi - hikal_wazifi_id" ON "public"."hr_employeebasic"."hikal_wazifi_id" = "hr_hikalwazifi - hikal_wazifi_id"."id"
 LEFT JOIN "public"."hr_hikalwazifi" AS "hr_hikalwazifi - edara_3ama" ON "hr_hikalwazifi - hikal_wazifi_id"."edara_3ama_id" = "hr_hikalwazifi - edara_3ama"."id"
 LEFT JOIN "public"."hr_hikalwazifi" AS "hr_hikalwazifi - edara_far3ia_id" ON "hr_hikalwazifi - hikal_wazifi_id"."edara_far3ia_id" = "hr_hikalwazifi - edara_far3ia_id"."id"
+LEFT JOIN "public"."hr_employeebankaccount" as "emp_bank_account" ON "emp_bank_account"."employee_id" = "public"."hr_employeebasic"."id" AND "emp_bank_account"."active" = TRUE
 LEFT JOIN {{ ref('hr_draja_wazifia')}} as "hr_draja_wazifia" ON "hr_draja_wazifia"."id" = "public"."hr_employeebasic"."draja_wazifia"
 LEFT JOIN {{ ref('hr_alawa_sanawia')}} as "hr_alawa_sanawia" ON "hr_alawa_sanawia"."id" = "public"."hr_employeebasic"."alawa_sanawia"
 LEFT JOIN {{ ref('hr_sex')}} as "hr_sex" ON "hr_sex"."id" = "public"."hr_employeebasic"."sex"
