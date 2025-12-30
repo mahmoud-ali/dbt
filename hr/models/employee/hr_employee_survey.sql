@@ -1,6 +1,7 @@
 SELECT
 hr_employee.*,
 hr_employee_manager.name AS manger,
+survey_employee_data.edara_3ama AS survey_edara_3ama,
 hr_survey_emergency_evaluation.job_title AS job_title,
 hr_survey_emergency_evaluation.period_from AS survey_from,
 hr_survey_emergency_evaluation.period_to AS  survey_to,
@@ -32,6 +33,7 @@ hr_survey_emergency_evaluation.manager_average_score
 FROM
   public.hr_employee_survey_emergencyevaluation AS hr_survey_emergency_evaluation
 LEFT JOIN {{ ref('hr_employee')}} ON hr_employee.email = hr_survey_emergency_evaluation.email
+LEFT JOIN {{ ref('hr_mubashir')}} AS survey_employee_data ON survey_employee_data.email = hr_survey_emergency_evaluation.email
 LEFT JOIN {{ ref('hr_employee')}} AS hr_employee_manager ON hr_employee_manager.email = hr_survey_emergency_evaluation.direct_manager
 LEFT JOIN {{ ref('hr_employee_survey_status')}} as hr_status ON hr_status.id = hr_survey_emergency_evaluation.employee_effective
 LEFT JOIN {{ ref('hr_employee_survey_status')}} as hr_recommendations ON hr_recommendations.id = hr_survey_emergency_evaluation.recommendations_continue
