@@ -101,4 +101,4 @@ LEFT JOIN (
     GROUP BY master_id
 ) d ON d.master_id = m.id
 
-ORDER BY m.id DESC;
+ORDER BY m.id DESC
