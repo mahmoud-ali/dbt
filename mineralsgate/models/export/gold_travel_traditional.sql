@@ -30,7 +30,6 @@ SELECT
         ELSE 'غير معروف'
     END AS identity_type,
     m.almustafid_identity,
-    m.almustafid_identity_attachement,
 
     -- Jihat alaisdar (جهة الإصدار)
     ja.id   AS jihat_alaisdar_id,
@@ -57,7 +56,8 @@ SELECT
     ub.username AS updated_by_username,
 
     -- Attachement
-    m.attachement_file,
+    CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/appmovegoldtraditional/',m.id,'/change/') as "link",
+
 
     -- Aggregated total gold weight from details
     COALESCE(d.total_weight, 0) AS gold_weight_in_gram,
