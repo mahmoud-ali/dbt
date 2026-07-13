@@ -20,7 +20,7 @@ SELECT
     ub.username AS updated_by_username,
 
     -- Attachement
-    CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/appmovegoldtraditional/',s.id,'/change/') as "link",
+    CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/appmovegoldtraditional/',s.id,'/change/') as "link"
 
 FROM gold_travel_traditional_sale s
 LEFT JOIN gold_travel_lkpowner oe ON s.buyer_exporter_id = oe.id
