@@ -1,7 +1,10 @@
 SELECT
     s.code                                   AS sale_code,
     s.sale_date,
-    s.buyer_type,
+    CASE s.buyer_type
+        WHEN 'exporter' THEN 'شركة صادر'
+        WHEN 'saig' THEN 'صائغ'
+    END                                        AS buyer_type,
     COALESCE(oe.name, sa.name)               AS buyer,
     st.name                                  AS source_state,
     r.code                                   AS record_code,
@@ -11,7 +14,7 @@ SELECT
         WHEN 1 THEN 'دائري'
         WHEN 2 THEN 'مستطيل'
         WHEN 3 THEN 'أخرى'
-    END                                       AS alloy_shape
+    END                                       AS alloy_shape,
 FROM gold_travel_traditional_sale s
 LEFT JOIN gold_travel_lkpowner oe ON s.buyer_exporter_id = oe.id
 LEFT JOIN gold_travel_traditional_lkpsaig sa ON s.buyer_saig_id = sa.id
