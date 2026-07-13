@@ -14,7 +14,7 @@ SELECT
         WHEN 1 THEN 'دائري'
         WHEN 2 THEN 'مستطيل'
         WHEN 3 THEN 'أخرى'
-    END                                       AS alloy_shape,
+    END                                       AS alloy_shape
 FROM gold_travel_traditional_sale s
 LEFT JOIN gold_travel_lkpowner oe ON s.buyer_exporter_id = oe.id
 LEFT JOIN gold_travel_traditional_lkpsaig sa ON s.buyer_saig_id = sa.id
