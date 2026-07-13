@@ -18,4 +18,4 @@ LEFT JOIN gold_travel_traditional_lkpsaig sa ON s.buyer_saig_id = sa.id
 JOIN company_profile_lkpstate st ON s.source_state_id = st.id
 LEFT JOIN gold_travel_traditional_appmovegoldtraditional r ON r.sale_id = s.id
 LEFT JOIN gold_travel_traditional_appmovegoldtraditionaldetail d ON d.master_id = r.id
-ORDER BY r.code, d.id;
+ORDER BY r.code, d.id
