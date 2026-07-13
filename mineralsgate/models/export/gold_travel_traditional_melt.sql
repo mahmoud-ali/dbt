@@ -23,6 +23,6 @@ FROM gold_travel_traditional_meltbatch mb
 JOIN company_profile_lkpstate st ON mb.source_state_id = st.id
 LEFT JOIN gold_travel_traditional_appmovegoldtraditional r ON r.melt_batch_id = mb.id
 LEFT JOIN gold_travel_traditional_appmovegoldtraditionaldetail d ON d.master_id = r.id
-LEFT JOIN accounts_customuser cb ON cb.id = s.created_by_id
-LEFT JOIN accounts_customuser ub ON ub.id = s.updated_by_id
+LEFT JOIN accounts_customuser cb ON cb.id = mb.created_by_id
+LEFT JOIN accounts_customuser ub ON ub.id = mb.updated_by_id
 ORDER BY r.code, d.id
