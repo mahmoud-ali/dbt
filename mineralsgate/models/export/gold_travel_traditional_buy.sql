@@ -32,4 +32,4 @@ LEFT JOIN gold_travel_traditional_appmovegoldtraditional r ON r.sale_id = s.id
 LEFT JOIN gold_travel_traditional_appmovegoldtraditionaldetail d ON d.master_id = r.id
 LEFT JOIN accounts_customuser cb ON cb.id = s.created_by_id
 LEFT JOIN accounts_customuser ub ON ub.id = s.updated_by_id
-ORDER BY 1,2,3,4,5,6,7,8,9,10
+GROUP BY 1,2,3,4,5,6,7,8,9,10
