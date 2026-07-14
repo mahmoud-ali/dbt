@@ -8,6 +8,7 @@ SELECT
     END                                        AS buyer_type,
     COALESCE(oe.name, sa.name)               AS buyer,
     st.name                                  AS source_state,
+    s.source_state_id,
     CASE s.state
         WHEN 1 THEN 'قيد البيع'
         WHEN 2 THEN 'اكتمل البيع'
