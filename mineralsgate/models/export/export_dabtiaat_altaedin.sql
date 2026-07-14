@@ -6,6 +6,7 @@ SELECT
     "dabtiaat_altaedin_appdabtiaatdetails"."gold_weight_in_gram" AS "dabtiaat_weight_in_gram",
     "dabtiaat_altaedin_appdabtiaatdetails"."gold_price" AS "dabtiaat_gold_price",
     "company_profile_lkpstate__via__source_state_id"."name" AS "source_state_name",
+    "public"."dabtiaat_altaedin_appdabtiaat"."source_state_id",
 	"dabtiaat_state"."name" AS "state",
     CONCAT('https://mineralsgate.com/app/managers/dabtiaat_altaedin/appdabtiaat/',"public"."dabtiaat_altaedin_appdabtiaat"."id",'/change/') as "link"
 FROM
