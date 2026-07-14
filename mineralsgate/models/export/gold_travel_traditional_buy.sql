@@ -1,4 +1,5 @@
 SELECT
+    s.id,
     s.code                                   AS sale_code,
     s.sale_date,
     CASE s.buyer_type
