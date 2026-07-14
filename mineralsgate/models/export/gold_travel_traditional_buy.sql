@@ -7,14 +7,10 @@ SELECT
     END                                        AS buyer_type,
     COALESCE(oe.name, sa.name)               AS buyer,
     st.name                                  AS source_state,
-    r.code                                   AS record_code,
-    r.almustafid_name,
-    d.alloy_weight_gram,
-    CASE d.alloy_shape
-        WHEN 1 THEN 'دائري'
-        WHEN 2 THEN 'مستطيل'
-        WHEN 3 THEN 'أخرى'
-    END                                       AS alloy_shape,
+    CASE s.state
+        WHEN 1 THEN 'قيد البيع'
+        WHEN 2 THEN 'اكتمل البيع'
+    END                                        AS sale_state,
     -- Created by / Updated by
     cb.username AS created_by_username,
     ub.username AS updated_by_username,
@@ -22,7 +18,11 @@ SELECT
     s.updated_at,
 
     -- Attachement
-    CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/sale/',s.id,'/change/') as "link"
+    CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/sale/',s.id,'/change/') as "link",
+
+    SUM(d.alloy_weight_gram)                AS total_weight_g,
+    COUNT(d.id)                             AS total_alloy_count,
+    COUNT(DISTINCT r.id)                    AS record_count
 
 FROM gold_travel_traditional_sale s
 LEFT JOIN gold_travel_lkpowner oe ON s.buyer_exporter_id = oe.id
@@ -32,4 +32,4 @@ LEFT JOIN gold_travel_traditional_appmovegoldtraditional r ON r.sale_id = s.id
 LEFT JOIN gold_travel_traditional_appmovegoldtraditionaldetail d ON d.master_id = r.id
 LEFT JOIN accounts_customuser cb ON cb.id = s.created_by_id
 LEFT JOIN accounts_customuser ub ON ub.id = s.updated_by_id
-ORDER BY r.code, d.id
+ORDER BY 1,2,3,4,5,6,7,8,9,10
