@@ -15,6 +15,8 @@ SELECT
     -- Created by / Updated by
     cb.username AS created_by_username,
     ub.username AS updated_by_username,
+    mb.created_at,
+    mb.updated_at,
 
     -- Attachement
     CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/meltbatch/',mb.id,'/change/') as "link"

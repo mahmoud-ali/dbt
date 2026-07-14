@@ -18,6 +18,8 @@ SELECT
     -- Created by / Updated by
     cb.username AS created_by_username,
     ub.username AS updated_by_username,
+    s.created_at,
+    s.updated_at,
 
     -- Attachement
     CONCAT('https://mineralsgate.com/app/managers/gold_travel_traditional/sale/',s.id,'/change/') as "link"
