@@ -17,7 +17,8 @@ SELECT
   "Company Profile Tblcompanyproductionlicense - License"."sheet_no" AS "license_sheet_no",
   "Company Profile Tblcompanyproductionlicense - License"."license_no" AS "license_no",
   "Company Profile Lkpstate - State"."name" AS "source_state_name",
-  "Company Profile Lkplocality - Locality"."name" AS "locality_name"
+  "Company Profile Lkplocality - Locality"."name" AS "locality_name",
+  "Company Profile Lkpstate - State"."id" AS "source_state_id"
 FROM
   "public"."production_control_goldproductionformalloy"
  

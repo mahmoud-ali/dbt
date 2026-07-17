@@ -17,7 +17,8 @@ SELECT
   "license - license_id"."end_date" AS "license_end_date",
   "license - license_id"."sheet_no" AS "license_sheet_no",
   "license - license_id"."license_no" AS "license_license_no",
-  "license - license_id"."license_type" AS "license_license_type"
+  "license - license_id"."license_type" AS "license_license_type",
+  "license - license_id"."source_state_id"
 FROM
   "public"."hse_companies_apphseperformancereport"
  
