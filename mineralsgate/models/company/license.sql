@@ -11,6 +11,7 @@ SELECT
   "company_profile_tblcompanyproduction - company_id"."code" AS "company_code",
   "company_type"."name" AS "company_type",
   "company_type"."id" AS "company_type_id",
+  "public"."company_profile_tblcompanyproductionlicense"."state_id" AS "source_state_id",
   "company_profile_lkpstate - state_id"."name" AS "company_state_name"
 FROM
   "public"."company_profile_tblcompanyproductionlicense"
