@@ -12,6 +12,7 @@ SELECT
   "company_type"."name" AS "company_type",
   "company_type"."id" AS "company_type_id",
   "public"."company_profile_tblcompanyproductionlicense"."state_id" AS "source_state_id",
+  "Company Profile Lkplocality - Locality"."name" AS "locality_name",
   "company_profile_lkpstate - state_id"."name" AS "company_state_name"
 FROM
   "public"."company_profile_tblcompanyproductionlicense"
@@ -20,3 +21,4 @@ LEFT JOIN "public"."company_profile_tblcompanyproduction" AS "company_profile_tb
 LEFT JOIN "public"."company_profile_lkpstate" AS "company_profile_lkpstate - state_id" ON "public"."company_profile_tblcompanyproductionlicense"."state_id" = "company_profile_lkpstate - state_id"."id"
 LEFT JOIN {{ ref('company_type') }} as "company_type" on "company_type"."id" = "company_profile_tblcompanyproduction - company_id"."company_type"
 LEFT JOIN {{ ref('license_type') }} as "license_type" on "license_type"."id" = "public"."company_profile_tblcompanyproductionlicense"."license_type"
+LEFT JOIN "public"."company_profile_lkplocality" AS "Company Profile Lkplocality - Locality" ON "public"."company_profile_tblcompanyproductionlicense"."locality_id" = "Company Profile Lkplocality - Locality"."id"
