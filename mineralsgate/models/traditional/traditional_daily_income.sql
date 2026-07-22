@@ -11,7 +11,7 @@ FROM
 LEFT JOIN 
     "public"."traditional_app_dailyincome" AS "traditional_app_dailyincome" ON "dailyreport"."report_id" = "traditional_app_dailyincome"."daily_report_id"
 LEFT JOIN 
-    "public"."traditional_app_lkpsoag" AS "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce" ON "traditional_app_dailyincome"."soag_id" = "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce"."id"
+    "public"."gold_travel_traditional_lkpjihatalaisdar" AS "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce" ON "traditional_app_dailyincome"."soag_id" = "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce"."id"
 LEFT JOIN
     {{ ref('traditional_daily_report_hajr_type')}} AS "hajr_type" ON "traditional_app_dailyincome"."hajr_type" = "hajr_type"."id"
 WHERE
