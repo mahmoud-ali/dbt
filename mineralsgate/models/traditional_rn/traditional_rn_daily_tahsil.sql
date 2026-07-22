@@ -12,5 +12,5 @@ FROM
 LEFT JOIN 
     "public"."traditional_app_dailytahsilform" AS "traditional_app_dailytahsilform" ON "dailyreport"."report_id" = "traditional_app_dailytahsilform"."daily_report_id"
 LEFT JOIN 
-    "public"."traditional_app_lkpsoag" AS "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce" ON "traditional_app_dailytahsilform"."soag_id" = "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce"."id"
+    "public"."gold_travel_traditional_lkpjihatalaisdar" AS "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce" ON "traditional_app_dailytahsilform"."soag_id" = "traditional_app_lkpsoag__via__soag_id__via__traditi_c895ecce"."id"
 WHERE "dailyreport"."source_state_id" = 1
