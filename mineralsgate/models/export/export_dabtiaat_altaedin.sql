@@ -2,7 +2,7 @@ SELECT
     "public"."dabtiaat_altaedin_appdabtiaat"."id" AS "id",
     "public"."dabtiaat_altaedin_appdabtiaat"."date" AS "date",
     "public"."dabtiaat_altaedin_appdabtiaat"."report_number" AS "report_number",
-    ROUND(CAST(("dabtiaat_altaedin_appdabtiaatdetails"."gold_weight_in_gram" * "dabtiaat_altaedin_appdabtiaatdetails"."gold_price" * 0.22) AS NUMERIC),2) AS "total_amount",
+    ROUND(CAST(("dabtiaat_altaedin_appdabtiaatdetails"."gold_weight_in_gram" * "dabtiaat_altaedin_appdabtiaatdetails"."gold_price" * 0.20) AS NUMERIC),2) AS "total_amount",
     "dabtiaat_altaedin_appdabtiaatdetails"."gold_weight_in_gram" AS "dabtiaat_weight_in_gram",
     "dabtiaat_altaedin_appdabtiaatdetails"."gold_price" AS "dabtiaat_gold_price",
     "company_profile_lkpstate__via__source_state_id"."name" AS "source_state_name",
