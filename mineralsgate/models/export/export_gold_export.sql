@@ -26,5 +26,5 @@ LEFT JOIN
     {{ ref('export_gold_export_state')}} AS "gold_export_state" ON "public"."gold_travel_appmovegold"."state" = "gold_export_state"."id"
 WHERE
   "public"."gold_travel_appmovegold"."form_type" = 1
-GROUP BY 1,2,3,4,5,6,7
+GROUP BY 1,2,3,4,5,6,7,8,9,10
 ORDER BY 2 DESC
