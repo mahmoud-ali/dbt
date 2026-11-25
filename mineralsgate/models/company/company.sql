@@ -12,6 +12,9 @@ SELECT
   "company_type"."name" AS "company_type",
   "company_type"."id" AS "company_type_id",
   "public"."company_profile_tblcompanyproduction"."code" AS "code",
+  "public"."company_profile_tblcompanyproduction"."commercial_register_no",
+  "public"."company_profile_tblcompanyproduction"."tax_number",
+  "public"."company_profile_tblcompanyproduction"."zakat_file_no",
   "company_profile_lkpcompanyproductionstatus - status_id"."name" AS "company_status"
 FROM
   "public"."company_profile_tblcompanyproduction"

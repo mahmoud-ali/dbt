@@ -4,6 +4,9 @@ SELECT
   "public"."gold_travel_appmovegold"."code" AS "code",
   "company_profile_lkpstate__via__source_state_id"."name" AS "source_state",
   "gold_travel_lkpowner__via__owner_name_lst_id"."name" AS "owner_name",
+  "gold_travel_lkpowner__via__owner_name_lst_id"."commercial_register_no",
+  "gold_travel_lkpowner__via__owner_name_lst_id"."tax_number",
+  "gold_travel_lkpowner__via__owner_name_lst_id"."zakat_file_no",
   "gold_export_state"."name" AS "state",
   "gold_export_state"."id" AS "state_id",
   SUM(
